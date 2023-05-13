@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+
+<body>
+    <h2>Formulários em HTML e JS</h2>
+
+    <form>
+        <!-- Formulário tipo checkbox-->
+        <input type="checkbox" id= "texto" name="texto" value="Valor 1">
+        <label>Opção 1</label><br>
+        <input type="checkbox" id= "texto" name="texto" value="Valor 2">
+        <label>Opção 2</label><br>
+        <input type="checkbox" id= "texto" name="texto" value="Valor 3">
+        <label>Opção 3</label><br>
+        <input type="checkbox" id= "texto" name="texto" value="Valor 4">
+        <label>Opção 4</label><br>
+
+        <!-- Botão Enviar -->
+        <button type="button" onclick= "myFunction()">Submit</button>
+    </form>
+    <p id="mostra"></p>
+    <script>
+        //Inicia uma função
+        function myFunction() {
+            var texto       = [];
+            var checkboxes  = document.querySelectorAll('input[type=checkbox]:checked');
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                texto.push(checkboxes[i].value);
+            }
+
+            document.getElementById("mostra").innerHTML = texto;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <form>
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" value=""><br>
+
+        <label for="turma">Turma:</label><br>
+        <input type="text" id="turma" name="turma" value=""><br>
+
+        <label for="nota1">Primeira Nota:</label><br>
+        <input type="text" id="nota1" name="nota1" value=""><br>
+
+        <label for="nota2">Segunda Nota:</label><br>
+        <input type="text" id="nota2" name="nota2" value=""><br>
+
+        <label for="nota3">Terceira Nota:</label><br>
+        <input type="text" id="nota3" name="nota3" value=""><br>
+
+        <label for="nota4">Quarta Nota:</label><br>
+        <input type="text" id="nota4" name="nota4" value=""><br><br>
+
+        <input type="submit" value="Submit">
+      </form> 
+      <p id = "mostra"></p>
+</body>
+<script>
+    var nome    = document.querySelector("#nome");
+    var turma   = document.querySelector("#turma");
+
+    var nota1   = document.querySelector("#nota1");
+    var nota2   = document.querySelector("#nota2");
+    var nota3   = document.querySelector("#nota3");
+    var nota4   = document.querySelector("#nota4");
+
+    var notaT   = nota1 + nota2 + nota3 + nota4;
+    var qNotas  = 4;
+    var media   = notaT /qNotas;
+
+    var mostra  = alert("Olá! " + nome + " sua média é " + media.toFixed(2).replace(".",","));
+    
+    document.getElementById("mostra").innerHTML = mostra;
+</script>
+</html>

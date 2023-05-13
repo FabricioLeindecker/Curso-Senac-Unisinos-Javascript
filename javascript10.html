@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <h2>Formulários em HTML e JS</h2>
+    <form>
+        <!-- Formulário tipo texto -->
+        <label>Nome</label><br>
+        <input id="nome" type="text"><br>    
+        <label>Sobrenome:</label><br>
+        <input id="sobrenome" type="text"><br>
+        <label>Peso:</label><br>
+        <input id="peso" type="text"><br>
+        <label>Altura:</label><br>
+        <input id="altura" type="text"><br><br>
+        
+        <!-- Botão Enviar -->
+        <button type="button" onclick="myFunction()">Submit</button>
+    </form>
+    <p id = "mostra"></p>
+    <script> 
+        // Inicia uma função
+        function myFunction() {
+            var nome        = document.getElementById("nome").value;
+            var sobrenome   = document.getElementById("sobrenome").value;
+            var peso        = document.getElementById("peso").value.replace(",",".");
+            var altura      = document.getElementById("altura").value.replace(",",".");
+            var imc         = peso / (altura * altura);
+
+            document.getElementById("mostra").innerHTML = "Olá " + nome + " " + sobrenome + " seu imc é " + imc.toFixed(2).replace(".",",");
+        }
+    </script>
+</body>
+</html>
